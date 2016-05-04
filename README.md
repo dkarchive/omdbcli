@@ -6,13 +6,19 @@ Simple [OMDb](http://omdbapi.com/) CLI using [`omdbapi`](https://github.com/case
 
 ## Installation
 
-```shell
+```
 $ git clone https://github.com/dkhamsing/omdbcli.git
 $ cd omdbcli/
 $ rake install
 ```
 
 ## Usage
+
+```shell
+omdb <title>
+omdb --title <title>
+omdb --search <name>
+```
 
 ```shell
 $ omdb 'true grit'
