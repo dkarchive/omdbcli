@@ -1,6 +1,6 @@
 # omdbcli
 
-Simple [OMDb](http://omdbapi.com/) CLI using `omdbapi`.
+Simple [OMDb](http://omdbapi.com/) CLI using [`omdbapi`](https://github.com/caseyscarborough/omdbapi).
 
 ## Installation
 
