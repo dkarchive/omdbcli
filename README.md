@@ -41,6 +41,10 @@ Looking up true grit...
  :response=>"True"}
 ```
 
+## Credits
+
+- [`omdbapi`](https://github.com/caseyscarborough/omdbapi)
+
 ## Contact
 
 - [github.com/dkhamsing](https://github.com/dkhamsing)
