@@ -2,6 +2,8 @@
 
 Simple [OMDb](http://omdbapi.com/) CLI using [`omdbapi`](https://github.com/caseyscarborough/omdbapi).
 
+[![Build Status](https://travis-ci.org/dkhamsing/omdbcli.svg)](https://travis-ci.org/dkhamsing/omdbcli)
+
 ## Installation
 
 ```shell
