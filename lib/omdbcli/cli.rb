@@ -58,11 +58,20 @@ module Omdbcli
       "--#{name}"
     end
 
+    def cli_process_response(hash)
+      if hash[:response]=='False'
+        puts hash[:error]
+      else
+        pp hash
+      end
+
+    end
+
     def cli_search(name)
       puts "Searching for #{name}..."
       r = OMDB.search name
       if r.class != Array
-        puts 'No results'
+        cli_process_response r
       else
         pp r
       end
@@ -70,12 +79,8 @@ module Omdbcli
 
     def cli_title(title)
       puts "Looking up #{title}..."
-      t = OMDB.title title
-      if t[:response]=='False'
-        puts t[:error]
-      else
-        pp t
-      end
+      r = OMDB.title title
+      cli_process_response r
     end
   end
 end
