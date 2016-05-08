@@ -21,7 +21,7 @@ module Omdbcli
     end
 
     def db_title(title)
-      r = OMDB.title title
+      r = OMDB.title title, tomatoes: true 
       db_process_response r
     end
   end
