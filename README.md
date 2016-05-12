@@ -87,6 +87,7 @@ Searching for star wars...
 ## Credits
 
 - [`omdbapi`](https://github.com/caseyscarborough/omdbapi)
+- [`awesome_print`](https://github.com/michaeldv/awesome_print)
 
 ## Contact
 
