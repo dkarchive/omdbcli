@@ -2,7 +2,7 @@ module Omdbcli
   require 'omdbcli/db'
   require 'omdbcli/version'
 
-  require 'pp'
+  require 'awesome_print'
 
   class << self
     OPTION_SEARCH = 'search'
@@ -35,7 +35,7 @@ module Omdbcli
         i = ARGV.index os
         name = ARGV[i+1]
         puts "Searching for #{name}..."
-        pp db_search name
+        cp db_search name
         exit
       end
     end
@@ -49,7 +49,7 @@ module Omdbcli
 
     def cli_title(t)
       puts "Looking up #{t}..."
-      pp db_title t
+      cp db_title t
     end
 
     def cli_usage
@@ -60,6 +60,10 @@ module Omdbcli
 
     def cli_make_option(name)
       "--#{name}"
+    end
+
+    def cp(text)
+      ap text, :color => { :string => :cyanish }
     end
   end
 end
