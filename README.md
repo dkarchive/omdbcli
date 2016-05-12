@@ -22,8 +22,6 @@ omdb --search <name>
 
 ```shell
 $ omdb 'true grit'
-omdb 0.2.1
-Looking up true grit...
 {:title=>"True Grit",
  :year=>"2010",
  :rated=>"PG-13",
@@ -46,7 +44,42 @@ Looking up true grit...
  :imdb_votes=>"235,888",
  :imdb_id=>"tt1403865",
  :type=>"movie",
+ :tomato_meter=>"96",
+ :tomato_image=>"certified",
+ :tomato_rating=>"8.4",
+ :tomato_reviews=>"262",
+ :tomato_fresh=>"252",
+ :tomato_rotten=>"10",
+ :tomato_consensus=>
+  "Girded by strong performances from Jeff Bridges, Matt Damon, and newcomer Hailee Steinfeld, and lifted by some of the Coens' most finely tuned, unaffected work, True Grit is a worthy companion to the Charles Portis book.",
+ :tomato_user_meter=>"85",
+ :tomato_user_rating=>"4.0",
+ :tomato_user_reviews=>"155896",
+ :tomato_url=>"http://www.rottentomatoes.com/m/true-grit-2010/",
+ :dvd=>"07 Jun 2011",
+ :box_office=>"$171.0M",
+ :production=>"Paramount Pictures",
+ :website=>"http://www.truegritmovie.com/",
  :response=>"True"}
+```
+
+```shell
+$ omdb --search 'star wars'
+Searching for star wars...
+[{:title=>"Star Wars: Episode IV - A New Hope",
+  :year=>"1977",
+  :imdb_id=>"tt0076759",
+  :type=>"movie",
+  :poster=>
+   "http://ia.media-imdb.com/images/M/MV5BOTIyMDY2NGQtOGJjNi00OTk4LWFhMDgtYmE3M2NiYzM0YTVmXkEyXkFqcGdeQXVyNTU1NTcwOTk@._V1_SX300.jpg"},
+ {:title=>"Star Wars: Episode V - The Empire Strikes Back",
+  :year=>"1980",
+  :imdb_id=>"tt0080684",
+  :type=>"movie",
+  :poster=>
+   "http://ia.media-imdb.com/images/M/MV5BMjE2MzQwMTgxN15BMl5BanBnXkFtZTcwMDQzNjk2OQ@@._V1_SX300.jpg"},
+   #...
+ ]
 ```
 
 ## Credits
