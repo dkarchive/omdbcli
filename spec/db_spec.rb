@@ -51,10 +51,16 @@ describe Omdbcli do
   describe 'content' do
     context 'searching a movie' do
       r = Omdbcli.db_title 'inception'
-      value = r[:imdb_id]
-      expect = 'tt1375666'
       it 'has an id' do
+        value = r[:imdb_id]
+        expect = 'tt1375666'
         expect(value).to eql(expect)
+      end
+
+      it 'has tomatoes ratings' do
+        v = r[:tomato_meter]
+        e = "86"
+        expect(v).to eql(e)
       end
     end
   end
