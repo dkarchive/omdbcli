@@ -6,6 +6,6 @@ before_script:
 script:
   - omdb
   - omdb 'true grit'
-  - omdb --title inception
-  - omdb --search 'star wars'
+  - omdb -t inception
+  - omdb -s 'star wars'
   - bundle exec rspec -fd
