@@ -8,4 +8,4 @@ script:
   - omdb 'true grit'
   - omdb -t inception
   - omdb -s 'star wars'
-  - bundle exec rspec -fd
+  - bundle exec rspec -fd --color
