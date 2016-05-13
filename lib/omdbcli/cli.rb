@@ -2,8 +2,6 @@ module Omdbcli
   require 'omdbcli/db'
   require 'omdbcli/version'
 
-  require 'awesome_print'
-
   class << self
     OPTION_SEARCH = 'search'
     OPTION_TITLE = 'title'
@@ -63,6 +61,8 @@ module Omdbcli
     end
 
     def cp(text)
+      require 'awesome_print'
+      
       ap text, :color => { :string => :cyanish }
     end
   end
