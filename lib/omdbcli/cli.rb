@@ -3,47 +3,41 @@ module Omdbcli
   require 'omdbcli/version'
 
   class << self
-    OPTION_SEARCH = 'search'
-    OPTION_TITLE = 'title'
-
     def cli
+      require 'awesome_print'
       require 'optparse'
 
       puts "#{COMMAND} #{VERSION}"
 
       ARGV << '-h' if ARGV.empty?
 
-      title  = nil
-      search = nil
-
+      options = {}
       ARGV.options do |opts|
-        opts.on("-t", "--title [movie]", String )  { |val| title = val }
-        opts.on("-s", "--search [movie]", String ) { |val| search = val }
-        opts.on_tail("-h", "--help")           { puts opts }
+        opts.banner = "usage: #{COMMAND} [movie] \n"\
+                      "       #{COMMAND} [options]"
+
+        opts.on("-t", "--title [movie]", String)  { |val| options['title'] = val }
+        opts.on("-s", "--search [movie]", String) { |val| options['search'] = val }
+        opts.on_tail("-h", "--help") { puts opts }
         opts.parse!
       end
 
-      if title.nil?
-        title = ARGV[0]
+      t = options['title']
+      if t.nil?
+        t = ARGV[0]
+
+        unless t.nil?
+          puts "Looking up #{t}..."
+          ap db_title(t), :color => { :string => :cyanish }
+          exit
+        end
       end
 
-      unless title.nil?
-        cli_title title
-        exit
+      s = options['search']
+      unless s.nil?
+        puts "Searching for #{s}..."
+        ap db_search(s)
       end
-
-      cp db_search(search) unless search.nil?
-    end
-
-    def cli_title(t)
-      puts "Looking up #{t}..."
-      cp db_title(t)
-    end
-
-    def cp(text)
-      require 'awesome_print'
-
-      ap text, :color => { :string => :cyanish }
     end
   end
 end
