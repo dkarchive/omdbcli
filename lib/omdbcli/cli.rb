@@ -22,8 +22,6 @@ module Omdbcli
         opts.parse!
       end
 
-      warn options
-
       t = options['title']
       t = ARGV[0] if t.nil?
       unless t.nil?
