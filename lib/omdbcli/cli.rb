@@ -17,8 +17,8 @@ module Omdbcli
       search = nil
 
       ARGV.options do |opts|
-        opts.on("-t", "--title=movie", String )  { |val| title = val }
-        opts.on("-s", "--search=movie", String ) { |val| search = val }
+        opts.on("-t", "--title [movie]", String )  { |val| title = val }
+        opts.on("-s", "--search [movie]", String ) { |val| search = val }
         opts.on_tail("-h", "--help")           { puts opts }
         opts.parse!
       end
