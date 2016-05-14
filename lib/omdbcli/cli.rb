@@ -22,15 +22,14 @@ module Omdbcli
         opts.parse!
       end
 
-      t = options['title']
-      if t.nil?
-        t = ARGV[0]
+      warn options
 
-        unless t.nil?
-          puts "Looking up #{t}..."
-          ap db_title(t), :color => { :string => :cyanish }
-          exit
-        end
+      t = options['title']
+      t = ARGV[0] if t.nil?
+      unless t.nil?
+        puts "Looking up #{t}..."
+        ap db_title(t), :color => { :string => :cyanish }
+        exit
       end
 
       s = options['search']
